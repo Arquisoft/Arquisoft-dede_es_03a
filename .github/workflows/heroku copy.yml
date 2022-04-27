@@ -1,0 +1,35 @@
+name: Despliegue en Heroku (rama de desarrollo)
+
+on:
+  push:
+    branches: [ uo271447-pruebasheroku ]
+  pull_request:
+    branches: [ uo271447-pruebasheroku ]
+
+jobs:
+  heroku-restapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "dede-es3a-restapi" #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
+          appdir: "restapi" # <- This will point to the api folder in your project
+
+  heroku-webapp:
+    needs: [heroku-restapi]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "dede-es3a" #Must be unique in Heroku
+          heroku_email:  ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
+          appdir: "webapp" # <- This will point to the api folder in your project
+
+  
