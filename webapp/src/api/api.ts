@@ -4,7 +4,7 @@ import { ObjectId } from 'bson';
 
 //Obtenemos la url de la apirest de Heroku o utilizamos localhost por defecto
 let apiEndPoint:string ='http://localhost:5000/'
-if(process.env.PORT) {
+if(process.env.PORT !== undefined) {
   apiEndPoint = 'http://dede-es3a-restapi.herokuapp.com/'
 }
 
