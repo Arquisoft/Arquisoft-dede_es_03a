@@ -18,6 +18,7 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           usedocker: true
           appdir: "restapi" # <- This will point to the api folder in your project
+          branch: uo271447-pruebasheroku
 
   heroku-webapp:
     needs: [heroku-restapi]
@@ -31,5 +32,6 @@ jobs:
           heroku_email:  ${{secrets.HEROKU_EMAIL}}
           usedocker: true
           appdir: "webapp" # <- This will point to the api folder in your project
+          branch: uo271447-pruebasheroku
 
   
