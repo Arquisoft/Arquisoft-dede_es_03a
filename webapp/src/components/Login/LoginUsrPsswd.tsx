@@ -42,7 +42,9 @@ const Login = () => {
   const classes = useStyles();
   const [userName,setUserName]=useState("");
   const [password,setPassword]=useState("");
+  const PORT = process.env.PORT || 5000
 
+  console.log('${PORT}');
   async function addUserToSession(){
     //Comprobamos los credenciales introducidos en base de datos
     var user = (await getUser(userName, password)); 
@@ -56,7 +58,12 @@ const Login = () => {
       // Lo guardamos en sesion (solo el usuario, la contraseña no la necesitamos para nada)
       sessionStorage.setItem('user', parsedUser.username);
       // Redirigimos a inicio
-      window.location.href='http://localhost:3000/';
+      if(PORT==5000){
+        window.location.href='http://localhost:3000/';
+      }
+      else{
+      window.location.href='https://dede-es3a.herokuapp.com';
+      }
     }
   }
   return (
