@@ -4,9 +4,9 @@ import { ObjectId } from 'bson';
 
 //Obtenemos la url de la apirest de Heroku o utilizamos localhost por defecto
 let apiEndPoint:string ='https://dede-es3a-restapi.herokuapp.com/'
-//if(process.env.PORT) {
-  //apiEndPoint = 'http://localhost:5999/'
-//}
+if(process.env.PORT) {
+  apiEndPoint = 'http://localhost:5000/'
+}
 
 export async function addUser(user:User):Promise<boolean>{
     const id = new ObjectId();
