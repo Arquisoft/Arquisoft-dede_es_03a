@@ -37,6 +37,7 @@ const FormLogIn = () => {
   const [idp, setIdp] = useState("https://inrupt.net");
   const [currentUrl, setCurrentUrl] = useState("https://localhost:3000");
   let p:string = "https://localhost:5000";
+  console.log(process.env.PORT + "")
   if(process.env.PORT)
     p="https://dede-es3a-restapi.herokuapp.com/"
   useEffect(() => {
