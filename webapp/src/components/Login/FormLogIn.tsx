@@ -60,7 +60,7 @@ const FormLogIn = () => {
                 onChange={(e) => setIdp(e.target.value)}
                 InputProps={{
                   endAdornment: (
-                    <LoginButton oidcIssuer={idp} redirectUrl={p+"/ProfileViewer"}>
+                    <LoginButton oidcIssuer={idp} redirectUrl={"https://dede-es3a.herokuapp.com/ProfileViewer"}>
                       <Button variant="contained" color="primary">
                         Login
                       </Button>
