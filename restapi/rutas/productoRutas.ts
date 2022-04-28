@@ -69,6 +69,7 @@ router.get('/producto/detalles/tallas_disponibles/:referencia', async (req: Requ
 
 router.get('/products/list', async (req: Request, res: Response) => {
   //formato de salida que espera el front-end
+  console.log("DENTRO LISTAPRODUCT");
   type TypeProduct = {
     _objectId: ObjectId;
     id: String;

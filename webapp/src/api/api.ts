@@ -45,8 +45,6 @@ export async function getUser(username : string, password : string): Promise<Use
 
 export async function getProducts(): Promise<TypeProduct[]> {
   const response:Response = await fetch(apiEndPoint+'products/list');
-  console.log("GetProductos()");
-  console.log({response})
   return response.json();
 }
 

@@ -21,6 +21,7 @@ router.get('/users/login/:username/:password', async (req: Request, res: Respons
     const paramUser:string = req.params.username;
     const paramPass:string = req.params.password;
     //Realizamos la busqueda por referencia
+    console.log("DENTRO USERLOGIN");
     const user = await Usuario.findOne({username: paramUser, password: paramPass})
     if(user){
       let entrada = user;
