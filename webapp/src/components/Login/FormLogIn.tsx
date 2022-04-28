@@ -36,7 +36,9 @@ const FormLogIn = () => {
   const classes = useStyles();
   const [idp, setIdp] = useState("https://inrupt.net");
   const [currentUrl, setCurrentUrl] = useState("https://localhost:3000");
-
+  let p:string = "https://localhost:5000";
+  if(process.env.PORT)
+    p="https://dede-es3a-restapi.herokuapp.com/"
   useEffect(() => {
     setCurrentUrl(window.location.href);
   }, [setCurrentUrl]);
@@ -57,7 +59,7 @@ const FormLogIn = () => {
                 onChange={(e) => setIdp(e.target.value)}
                 InputProps={{
                   endAdornment: (
-                    <LoginButton oidcIssuer={idp} redirectUrl={"/ProfileViewer"}>
+                    <LoginButton oidcIssuer={idp} redirectUrl={p+"/ProfileViewer"}>
                       <Button variant="contained" color="primary">
                         Login
                       </Button>
