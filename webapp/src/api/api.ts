@@ -3,7 +3,7 @@ import { ObjectId } from 'bson';
 
 
 //Obtenemos la url de la apirest de Heroku o utilizamos localhost por defecto
-let apiEndPoint:string ='http://dede-es3a-restapi.herokuapp.com/'
+let apiEndPoint:string ='https://dede-es3a-restapi.herokuapp.com/'
 //if(process.env.PORT) {
   //apiEndPoint = 'http://localhost:5999/'
 //}
