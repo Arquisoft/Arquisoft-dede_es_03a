@@ -1,11 +1,11 @@
 import {User, Product, TypeProduct} from '../shared/shareddtypes';
 import { ObjectId } from 'bson';
-
+import "dotenv/config";
 
 //Obtenemos la url de la apirest de Heroku o utilizamos localhost por defecto
-let apiEndPoint:string ='https://dede-es3a-restapi.herokuapp.com/'
+let apiEndPoint:string ='http://localhost:5000/'
 if(process.env.PORT) {
-  apiEndPoint = 'http://localhost:5000/'
+  apiEndPoint = 'https://dede-es3a-restapi.herokuapp.com/'
 }
 
 export async function addUser(user:User):Promise<boolean>{
