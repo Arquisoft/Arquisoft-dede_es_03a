@@ -70,15 +70,23 @@ export default function CartButons() {
     
     <Container maxWidth='lg' className={classes.container}>  
       <div className={classes.margen}>
-      <Card>
-      <Typography variant='h5'>
-                  Precio total sin gastos de Envio: {calcularValor()}
-                </Typography> 
+      { calcularValor()!=undefined ? (
+      <><Card>
+            <Typography variant='h5'>
+              Precio total sin gastos de Envio: {calcularValor()}
+            </Typography>
+          </Card><Button variant="contained" endIcon={<ShoppingCartIcon />} sx={{ bgcolor: 'black' }} size='large' to={linkFinalizarCompra} component={Link}>
+              Loggeate para Finalizar Compra
+            </Button></>
+              ): ([
+                <Card> 
+                  <Typography variant='h5'>
+                  Aun no has añadido nada al carrito!
+                  </Typography>
                 </Card>
+                
+              ])}
         
-        <Button variant="contained" endIcon={<ShoppingCartIcon />} sx={{ bgcolor: 'black' }} size='large' to = {linkFinalizarCompra} component={Link}>
-          Loggeate para Finalizar Compra
-        </Button>
         </div> 
         </Container>  
      
