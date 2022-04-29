@@ -73,7 +73,7 @@ const ShoesCart = () => {
               </Typography>
             </CardContent>
             </CardActionArea>
-            <IconButton aria-label="delete" onClick={() => 
+            <IconButton aria-label="delete" href= {window.location.protocol + '//' + window.location.host + '/Cart'} onClick={() => 
             {
               // Eliminar de carrito
               var itemFound:boolean = false;
@@ -92,7 +92,6 @@ const ShoesCart = () => {
               });
               // Establecemos el nuevo valor para el carrito
               sessionStorage.setItem('cart', JSON.stringify(newCart));
-              window.location.reload();
             }
             }><DeleteIcon /></IconButton>
           </Card>
