@@ -39,3 +39,4 @@ jobs:
           password: ${{ secrets.DOCKER_PUSH_TOKEN }}
           registry: ${{ env.REGISTRY }}
           workdir: restapi
+ 
