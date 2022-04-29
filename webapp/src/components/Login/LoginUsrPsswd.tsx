@@ -10,7 +10,7 @@ import { Link, Typography } from "@mui/material";
 import Nav from '../Fragments/Nav';
 import { User } from '../../shared/shareddtypes';
 import { getUser } from '../../api/api';
-import { obtenerport2 } from '../../../server'
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
@@ -54,9 +54,8 @@ const LoginUsrPsswd = () => {
       // Lo guardamos en sesion (solo el usuario, la contraseña no la necesitamos para nada)
       sessionStorage.setItem('user', parsedUser.username);
       // Redirigimos a inicio
-      var s ={obtenerport2};
-      console.log(s)
-      window.location.href='http://localhost:3000/';
+      
+      window.location.href = window.location.protocol + '//' + window.location.host + '/';
     }
   }
   return (

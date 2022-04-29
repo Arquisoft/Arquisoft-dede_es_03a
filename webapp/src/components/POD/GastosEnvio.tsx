@@ -81,7 +81,7 @@ function GastosEnvio(): JSX.Element {
                   </Typography>
               </Card>
 
-              <Button variant="contained" endIcon={<ShoppingCartIcon />}  size='large' onClick={FinishBuying} href='http://localhost:3000'>
+              <Button variant="contained" endIcon={<ShoppingCartIcon />}  size='large' onClick={FinishBuying} href= {window.location.protocol + '//' + window.location.host + '/'}>
                   Finalizar Compra
               </Button>
           </div>

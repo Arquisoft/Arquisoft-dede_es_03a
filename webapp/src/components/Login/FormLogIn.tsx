@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const FormLogIn = () => {
   const classes = useStyles();
   const [idp, setIdp] = useState("https://inrupt.net");
-  const [currentUrl, setCurrentUrl] = useState("https://localhost:3000");
+  const [currentUrl, setCurrentUrl] = useState(window.location.protocol + '//' + window.location.host+ '/');
   
   useEffect(() => {
     setCurrentUrl(window.location.href);
@@ -56,7 +56,7 @@ const FormLogIn = () => {
                 onChange={(e) => setIdp(e.target.value)}
                 InputProps={{
                   endAdornment: (
-                    <LoginButton oidcIssuer={idp} redirectUrl={"http://localhost:3000/ProfileViewer"}>
+                    <LoginButton oidcIssuer={idp} redirectUrl={window.location.protocol + '//' + window.location.host + '/ProfileViewer'}>
                       <Button variant="contained" color="primary">
                         Login
                       </Button>
