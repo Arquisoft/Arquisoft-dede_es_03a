@@ -27,7 +27,6 @@ mongoose
 
 //Heroku asigna el puerto de forma dinámica. (process.env.PORT)
 const PORT = process.env.PORT || `${process.env.API_REST_PORT}`
-
 app
   .listen(PORT, (): void => {
     console.log(`REST api escuchando en el puerto ${PORT}`);
