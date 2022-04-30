@@ -78,10 +78,11 @@ const ProfileViewer = () => {
           Logout
         </Button>
       </LogoutButton>
+      {session.info.webId ? (
         <Button style={{ marginTop: 20 }}endIcon={<ShoppingCartIcon />}  variant="contained" color="secondary" href="/GastosEnvio" onClick={guardarWebId}>
           Continuar con su compra 
         </Button>
-
+      ) : null}
     </Container>
     </form></>
   );
