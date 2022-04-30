@@ -4,6 +4,7 @@ import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import GetAddressPod from "../POD/GetAddressPod";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
@@ -74,7 +75,7 @@ const ProfileViewer = () => {
         </CombinedDataProvider>
       ) : null}
       <LogoutButton>
-        <Button style={{ marginTop: 20 }} variant="contained" color="primary" href="/FormLogIn">
+        <Button style={{ marginTop: 20 }} variant="contained" color="primary" to="/FormLogIn" component={Link}>
           Logout
         </Button>
       </LogoutButton>
