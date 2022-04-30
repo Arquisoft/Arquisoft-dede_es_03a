@@ -72,7 +72,7 @@ const ProfileViewer = () => {
             </CardActionArea>
           </Card>
         </CombinedDataProvider>
-      ) : null}
+      ) : null} 
       <LogoutButton>
         <Button style={{ marginTop: 20 }} variant="contained" color="primary" href="/FormLogIn">
           Logout
