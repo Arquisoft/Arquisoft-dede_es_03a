@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 });
 
-function calcularValor(){
+function calcularValor() : number {
   var x=0
   var x2=""
   if(JSON.parse(sessionStorage.getItem('cart') as string) != null){
@@ -50,8 +50,8 @@ function calcularValor(){
       x2=String(x);
     }
     sessionStorage.setItem('precioCarrito',x2)
-    return x;
    }
+   return x;
   }
 
 export default function CartButons() {
@@ -70,7 +70,7 @@ export default function CartButons() {
     
     <Container maxWidth='lg' className={classes.container}>  
       <div className={classes.margen}>
-      { calcularValor()!=undefined ? (
+      { calcularValor()>0 ? (
       <><Card>
             <Typography variant='h5'>
               Precio total sin gastos de Envio: {calcularValor()}
