@@ -54,7 +54,7 @@ const Register = () => {
           // Almacenamos el usuario en sesión
           sessionStorage.setItem('user',JSON.stringify(item));
           alert("Usuario añadido");
-          window.location.href='http://localhost:3000/';
+          window.location.href = window.location.protocol + '//' + window.location.host + '/';
         }
         else{
           alert("Credenciales inválidas");
