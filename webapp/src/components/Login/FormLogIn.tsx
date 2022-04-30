@@ -1,4 +1,5 @@
-import { Button, Card, CardContent, CardHeader, Container, FormGroup, Link, TextField, Typography } from "@mui/material";
+import { Button, Card, CardContent, CardHeader, Container, FormGroup, TextField, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LoginButton} from "@inrupt/solid-ui-react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
@@ -56,8 +57,9 @@ const FormLogIn = () => {
                 onChange={(e) => setIdp(e.target.value)}
                 InputProps={{
                   endAdornment: (
-                    <LoginButton oidcIssuer={idp} redirectUrl={window.location.href+'/ProfileViewer'}>
-                      <Button variant="contained" color="primary">
+                    <LoginButton oidcIssuer={idp} redirectUrl={""}>
+                      <Button variant="contained" color="primary" to={'/ProfileViewer'}
+                        component={Link}>
                         Login
                       </Button>
                     </LoginButton>
@@ -65,7 +67,7 @@ const FormLogIn = () => {
                 }} />
             </FormGroup>
             <Typography variant="body1" component="p" id="help">
-              <Link href="https://inrupt.net/register" margin={'30%'}> ¿No tienes una cuenta? Regístrate aqui</Link>
+              <Link to={"https://inrupt.net/register"}> ¿No tienes una cuenta? Regístrate aqui</Link>
             </Typography>
           </Container>
         </CardContent>
