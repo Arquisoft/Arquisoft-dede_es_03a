@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 });
 
-function calcularValor(){
+function calcularValor():number{
   var x=0
   var x2=""
   if(JSON.parse(sessionStorage.getItem('cart') as string) != null){
@@ -52,6 +52,7 @@ function calcularValor(){
     sessionStorage.setItem('precioCarrito',x2)
     return x;
    }
+   return x;
   }
 
 export default function CartButons() {
@@ -70,15 +71,24 @@ export default function CartButons() {
     
     <Container maxWidth='lg' className={classes.container}>  
       <div className={classes.margen}>
-      <Card>
-      <Typography variant='h5'>
-                  Precio total sin gastos de Envio: {calcularValor()}
-                </Typography> 
+        { calcularValor()>0 ? (
+                  <><Card>
+            <Typography variant='h5'>
+              Precio total sin gastos de Envio: {calcularValor()}
+            </Typography>
+          </Card><Button variant="contained" endIcon={<ShoppingCartIcon />} sx={{ bgcolor: 'black' }} size='large' to={linkFinalizarCompra} component={Link}>
+              Loggeate para Finalizar Compra
+            </Button></>
+                
+              ): ([
+                <Card className={classes.sizes}>
+                  <Typography variant='h5'>
+                  UPS! parece que no tienes nada en el carrito aún.
+                  </Typography>
                 </Card>
-        
-        <Button variant="contained" endIcon={<ShoppingCartIcon />} sx={{ bgcolor: 'black' }} size='large' to = {linkFinalizarCompra} component={Link}>
-          Loggeate para Finalizar Compra
-        </Button>
+              ]
+              )}
+      
         </div> 
         </Container>  
      
